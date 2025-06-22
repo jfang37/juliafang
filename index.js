@@ -53,36 +53,31 @@ const callback = (entries) => {
         }
 
         prevYPosition = window.scrollY;
-        console.log(direction, entry.target, entry.isIntersecting)
 
         // if down and true, then activate target
         if (direction === 'down' && entry.isIntersecting) {
-            console.log("activate ", entry.target.id, " section")
             const button_id = entry.target.id + "-btn";
-            console.log(button_id)
             const button = document.getElementById(button_id);
-            console.log(button);
             activateSectionButton(button);
         } else if (direction === 'up' && entry.isIntersecting) {
-            console.log("activate ", entry.target.id, " section")
             const button_id = entry.target.id + "-btn";
-            console.log(button_id)
             const button = document.getElementById(button_id);
-            console.log(button);
             activateSectionButton(button);
         }
     })
 }
 
 const options = {
-  rootMargin: "-75px",
-  threshold: 0
+    rootMargin: "-75px",
+    threshold: 0
 }
 
-const observer = new IntersectionObserver(callback, options);
-sections.forEach((sec) => {
-    observer.observe(sec);
-})
+if (window.innerWidth > 1024) {
+    const observer = new IntersectionObserver(callback, options);
+    sections.forEach((sec) => {
+        observer.observe(sec);
+    })
+}
 
 // FORM SUBMISSION
 const form = document.getElementById('form');
@@ -142,9 +137,7 @@ function animate_snow_julia() {
 }
 
 // happens on click
-function activateSection(e) {
-    console.log(e.target);
-    
+function activateSection(e) {    
     activateSectionButton(e.target);
 
     // scroll into view

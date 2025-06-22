@@ -77,7 +77,6 @@ span{
 
 header{
   position: sticky;
-  opacity: 100%;
   top: 0;
   background-color: var(--color-pink-2);
   min-height: 75px;
@@ -204,13 +203,19 @@ footer{
 
   #intro .intro-connect {
     background-color: var(--color-green-3);
-    display: grid;
-    grid-template-columns: 9fr 1fr 1fr;
-    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem;
   }
 
   #intro .intro-connect p {
     font-style: italic;
+    width: 75%;
+  }
+
+  #intro .connect-icons {
+    display: flex;
+    column-gap: 10px;
   }
 
   #intro .intro-connect a {
@@ -230,8 +235,8 @@ footer{
   }
 
 .skills-container{
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  display: flex;
+  justify-content: space-between;
   min-height: 100px;
 }
 
@@ -242,7 +247,6 @@ footer{
 
 .skills-container .skill{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.1s ease-in-out;
@@ -489,3 +493,191 @@ footer{
   .contact-info a:hover{
     color: var(--color-pink-1);
   }
+
+/* ------- MEDIA QUERY ------- */
+
+@media (max-width: 575px) {
+
+  header {
+    padding: 0 20px;
+  }
+
+    header h1, .big-text {
+      font-size: 20px;
+    }
+    
+    header .nav-bar {
+      column-gap: 5px;
+    }
+
+    .nav-bar button, .nav-bar button.active-section,
+    header button:hover {
+      font-size: 10px;
+    }
+
+  .section {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    margin-top: 0px;
+    font-size: 24px;
+  }
+
+  #intro h3, .experience-content h3,
+  .contact-info i,
+  .skills-container .skill i,
+  #intro .intro-connect i {
+    font-size: 20px;
+  }
+
+  #intro {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+    .skills-container {
+      min-height: 30px;
+    }
+
+      .skills-container .skill svg {
+        width: 25px;
+        height: 25px;
+      }
+    
+    #intro .about-me-image {
+      justify-content: center;
+    }
+    #snow-julia {
+      max-height: 200px;
+    }
+
+  p, .experience-desc, 
+  #contact .contact-info p,
+  .contact-form label,
+  .contact-form button,
+  .footer-content p {
+    font-size: 12px;
+  }
+
+  .experience-content {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+  }
+
+    .experience-company {
+      font-size: 16px;
+    }
+
+    .experience-item {
+      margin: 5px 0px;
+      padding: 10px;
+    }
+
+    .experience-desc {
+      margin-top: 5px;
+    }
+
+  .project-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+    .project-card {
+      height: 200px;
+      width: 300px;
+    }
+  
+  #reading-list {
+    display: none;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    row-gap: 20px;
+  }
+
+    #contact .contact-info {
+      justify-content: flex-start;
+      padding: 0px;
+    }
+
+      .contact-info i {
+        margin-right: 5px;
+      }
+
+  footer {
+    padding: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1024px) {
+
+  header {
+    padding: 0px 50px;
+  }
+  .section {
+    padding: 30px 50px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  #intro {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    height: auto;
+  }
+
+    .intro-text {
+      width: 40%;
+    }
+
+    .skills-container .skill i {
+      font-size: 30px;
+    }
+
+    .skills-container .skill svg {
+      width: 30px;
+      height: 30px;
+    }
+
+  .experience-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 30px 0px;
+  }
+
+    .experience-content .experience-item {
+      margin: 0;
+    }
+
+  .project-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+
+  #reading-list {
+    display: none;
+  }
+
+  .contact-container {
+    display: initial;
+  }
+
+    .contact-form {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+}
