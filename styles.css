@@ -343,6 +343,7 @@ footer{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 20px;
   opacity: 0;
 }
@@ -586,6 +587,14 @@ footer{
     align-items: center;
     row-gap: 10px;
   }
+
+    .project-text {
+      opacity: 1;
+    }
+
+    .project-description {
+      opacity: 0.9;
+    }
 
     .project-card {
       height: 200px;
