@@ -311,6 +311,7 @@ footer{
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 30px;
+  gap: 30px;
 }
 
 .project-card {
@@ -369,6 +370,15 @@ footer{
   margin-top: 0;
   color: var(--color-pink-1);
 }
+
+.project-card i {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+  .project-card i:hover {
+    color: var(--color-pink-1);
+  }
 
 /* BOOK SECTION */
 #reading-list{
