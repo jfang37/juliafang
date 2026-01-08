@@ -322,6 +322,9 @@ footer{
   width: 450px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-description {
